@@ -67,9 +67,10 @@ pub fn build(b: *std.Build) !void {
         const jit_logging = b.option(bool, "jit-logging", "Enable JIT pipelines logging support") orelse jit;
         const futex = b.option(bool, "futex", "Enable futex support") orelse true;
         const tls = b.option(bool, "tls", "Enable the use of thread-local storage") orelse true;
+        const stdcxx = b.option(bool, "stdcxx", "Enable stdcxx") orelse true;
 
-        const flags = .{ jit, futex, tls };
-        const macros = .{ "JIT", "FUTEX", "TLS" };
+        const flags = .{ jit, futex, tls, stdcxx };
+        const macros = .{ "JIT", "FUTEX", "TLS", "STDCXX" };
         inline for (flags, macros) |flag, macro|
             if (!flag)
                 lib.root_module.addCMacro("BL_BUILD_NO_" ++ macro, "");
@@ -78,6 +79,7 @@ pub fn build(b: *std.Build) !void {
             if (b.lazyDependency("asmjit", .{
                 .target = target,
                 .optimize = optimize,
+                .stdcxx = stdcxx,
                 .text = jit_logging,
                 .logging = jit_logging,
                 .aarch64 = target.result.cpu.arch == .aarch64,
