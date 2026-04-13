@@ -9,8 +9,8 @@
             .hash = "N-V-__8AAFf-eACW7HkGcSBpxPhoZSCr0ClNCuCyYWHOFUen",
         },
         .asmjit = .{
-            .url = "git+https://github.com/KNnut/asmjit#013301839deea0a5e497038ad3b06f5be93793fa",
-            .hash = "asmjit-1.21.0-ZukacAAcAAD0M45fSbFPjBZTRb9G8GrRYCV9l6rDZNop",
+            .url = "git+https://github.com/KNnut/asmjit#81b5ef21d75948a07ece91d82dae495e07086504",
+            .hash = "asmjit-1.21.0-ZukacIEdAAAfODbgHMCupdrLNUNEqVmLDcsbolHeIz0L",
             .lazy = true,
         },
     },
