@@ -11,6 +11,7 @@ pub fn build(b: *std.Build) !void {
             .target = target,
             .optimize = optimize,
             .link_libcpp = true,
+            .sanitize_c = .off,
         }),
     });
 
@@ -112,6 +113,7 @@ pub fn build(b: *std.Build) !void {
 
         var cppflags: std.ArrayList([]const u8) = .empty;
         try cppflags.appendSlice(b.allocator, &.{
+            "-std=c++20",
             "-fvisibility=hidden",
             "-fno-exceptions",
             "-fno-rtti",
@@ -123,7 +125,7 @@ pub fn build(b: *std.Build) !void {
             "-mllvm",
             "--disable-loop-idiom-all",
         });
-        if (optimize != .Debug)
+        if (optimize != .debug)
             try cppflags.appendSlice(b.allocator, &.{
                 "-fmerge-all-constants",
                 "-ftree-vectorize",

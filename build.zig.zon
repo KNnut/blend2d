@@ -1,16 +1,16 @@
 .{
     .name = .blend2d,
-    .version = "0.21.2",
+    .version = "0.21.3",
     .fingerprint = 0x9c29a7522480f0ef,
-    .minimum_zig_version = "0.15.2",
+    .minimum_zig_version = "0.17.0",
     .dependencies = .{
         .blend2d = .{
-            .url = "git+https://github.com/blend2d/blend2d#6dbc2cefbc996379e07104e34519a440b49b15d7",
-            .hash = "N-V-__8AAFf-eACW7HkGcSBpxPhoZSCr0ClNCuCyYWHOFUen",
+            .url = "git+https://github.com/blend2d/blend2d#58ca9460b4138af6e793184682e9324e0a8053b2",
+            .hash = "N-V-__8AAKkNeQBCqmy_xKicS1ialLLrNVU7lEmWjrkoTS82",
         },
         .asmjit = .{
-            .url = "git+https://github.com/KNnut/asmjit#81b5ef21d75948a07ece91d82dae495e07086504",
-            .hash = "asmjit-1.21.0-ZukacIEdAAAfODbgHMCupdrLNUNEqVmLDcsbolHeIz0L",
+            .url = "git+https://github.com/KNnut/asmjit#3524922432ee56eb023ae9d269da81ff14d565db",
+            .hash = "asmjit-1.23.0-ZukacJEdAAD92UeRzZ4Oftw56duHaOcnzFD_FV_5CenO",
             .lazy = true,
         },
     },
